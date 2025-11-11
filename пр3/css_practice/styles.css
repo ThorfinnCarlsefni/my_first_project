@@ -1,0 +1,195 @@
+/* Базовые селекторы */
+body {
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+#site-title {
+    color: darkblue;
+    font-size: 2em;
+}
+
+.subtitle {
+    color: gray;
+    font-style: italic;
+}
+
+.highlight {
+    background-color: yellow;
+    padding: 5px;
+}
+
+/* Комбинированные селекторы */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: green;
+}
+
+.main-nav a:hover {
+    color: darkgreen;
+    text-decoration: underline;
+}
+
+/* Дочерние селекторы */
+.content > section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.post > h3 {
+    color: purple;
+    border-bottom: 2px solid purple;
+}
+
+/* Соседние селекторы */
+.intro h2 + p {
+    font-weight: bold;
+}
+
+.highlight {
+    border-left: 3px solid orange;
+    padding-left: 10px;
+}
+
+/* Каскад */
+.example p {
+    color: blue;
+    font-size: 14px;
+}
+
+.example div p {
+    color: green;
+    font-size: 12px;
+}
+
+p {
+    color: black !important;
+    font-size: 16px;
+}
+
+/* Специфичность */
+ul li.special {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+#main-header {
+    background-color: lightblue;
+    padding: 20px;
+}
+
+/* Наследование */
+.example {
+    font-family: "Times New Roman", serif;
+    color: darkred;
+}
+
+.example p {
+    border: 1px solid currentColor;
+    padding: 5px;
+}
+
+/* Псевдоклассы */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button.primary {
+    background-color: blue;
+    color: white;
+}
+
+button.primary:hover {
+    background-color: darkblue;
+}
+
+li:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+/* Псевдоэлементы */
+.main-footer::before {
+    content: "📞 ";
+}
+
+.main-footer::after {
+    content: " 📍";
+}
+
+.highlight::first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: red;
+}
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d; 
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --spacing: 15px;
+}
+
+#main-header {
+    background-color: var(--primary-color);
+}
+
+button.primary {
+    background-color: var(--primary-color);
+}
+
+.current-color-demo {
+    color: var(--primary-color);
+    border: 2px solid currentColor;
+    padding: var(--spacing);
+    margin: var(--spacing) 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.animated-element {
+    animation: fadeIn 0.5s ease-in;
+}
+
+button:hover {
+    animation: bounce 0.3s;
+}
+
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    body {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        display: block;
+        width: 100%;
+    }
+}

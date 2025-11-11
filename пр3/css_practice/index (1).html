@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа CSS</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="main-header">
+        <h1 id="site-title">Мой сайт</h1>
+        <p class="subtitle">Изучаем CSS</p>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Добро пожаловать</h2>
+            <p>Это базовый шаблон для изучения CSS.</p>
+            <p class="highlight">Важный текст</p>
+            
+            <div class="current-color-demo">
+                <h3>Демонстрация currentColor</h3>
+                <p>Граница использует цвет текста через currentColor</p>
+            </div>
+        </section>
+
+        <article class="post">
+            <h3>Статья</h3>
+            <p>Содержание статьи...</p>
+            <ul>
+                <li>Пункт 1</li>
+                <li class="special">Пункт 2</li>
+                <li>Пункт 3</li>
+            </ul>
+            
+            <div class="animated-element">
+                Анимированный блок
+            </div>
+        </article>
+
+        <div class="example">
+            <p>Параграф 1</p>
+            <p>Параграф 2</p>
+            <div>
+                <p>Вложенный параграф</p>
+            </div>
+        </div>
+
+        <button>Кнопка 1</button>
+        <button class="primary">Кнопка 2</button>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2023</p>
+    </footer>
+</body>
+</html>
