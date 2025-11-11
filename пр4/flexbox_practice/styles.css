@@ -1,0 +1,144 @@
+/* Часть 2.1: Горизонтальное меню навигации */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-list li a {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-list li a:hover {
+    background-color: #555;
+}
+
+/* Часть 2.2: Карточки в строку */
+.cards-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.card {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Часть 3.1: Основной макет страницы */
+.main-layout {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.content-container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: #2196F3;
+    color: white;
+    padding: 1rem;
+    width: 200px;
+}
+
+.main-content {
+    background-color: #FFC107;
+    padding: 1rem;
+    flex: 1;
+}
+
+/* Часть 3.2: Футер с равными колонками */
+.footer {
+    background-color: #333;
+    color: white;
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 1rem;
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Часть 4.1: Центрирование и выравнивание */
+.centering-section {
+    height: 300px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-box {
+    background-color: #9C27B0;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Часть 4.2: Адаптивность с Flexbox */
+@media (max-width: 768px) {
+    .cards-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .content-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .footer {
+        flex-direction: column;
+    }
+}
+
+/* Часть 5.1: Эксперименты с порядком элементов */
+.order-section {
+    display: flex;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.order-item {
+    padding: 2rem;
+    background-color: #FF5722;
+    color: white;
+    border-radius: 4px;
+    flex: 1;
+    text-align: center;
+}
+
+.item1 { order: 2; }
+.item2 { order: 3; }
+.item3 { order: 1; }
