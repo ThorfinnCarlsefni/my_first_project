@@ -1,0 +1,183 @@
+/* Основная сетка с именованными областями */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav main sidebar"
+        "footer footer footer";
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-rows: 80px 1fr 80px;
+    gap: 10px;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.header { 
+    grid-area: header; 
+    background-color: #4CAF50; 
+    padding: 20px;
+    text-align: center;
+}
+
+.nav { 
+    grid-area: nav; 
+    background-color: #2196F3; 
+    padding: 20px;
+}
+
+.main { 
+    grid-area: main; 
+    background-color: #FFC107; 
+    padding: 20px;
+}
+
+.sidebar { 
+    grid-area: sidebar; 
+    background-color: #9C27B0; 
+    padding: 20px;
+}
+
+.footer { 
+    grid-area: footer; 
+    background-color: #607D8B; 
+    padding: 20px;
+    text-align: center;
+}
+
+/* Вложенная Grid-сетка для галереи */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    background-color: #FF5722;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* Grid для футера */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.footer-section {
+    background-color: #795548;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Адаптивная сетка с auto-fill и minmax */
+.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.auto-item {
+    background-color: #009688;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Выравнивание */
+.alignment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 150px;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.align-item {
+    background-color: #3F51B5;
+    color: white;
+    padding: 20px;
+}
+
+.alignment-grid .align-item:nth-child(1) {
+    justify-self: start;
+    align-self: start;
+}
+
+.alignment-grid .align-item:nth-child(2) {
+    justify-self: center;
+    align-self: center;
+}
+
+.alignment-grid .align-item:nth-child(3) {
+    justify-self: end;
+    align-self: end;
+}
+
+/* Эксперименты с grid-template */
+.template-grid {
+    display: grid;
+    grid-template: 
+        "areaA areaB" 100px
+        "areaC areaD" 100px
+        "areaE areaE" 100px / 1fr 1fr;
+    gap: 10px;
+}
+
+.template-item {
+    background-color: #E91E63;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.template-item:nth-child(1) { grid-area: areaA; }
+.template-item:nth-child(2) { grid-area: areaB; }
+.template-item:nth-child(3) { grid-area: areaC; }
+.template-item:nth-child(4) { grid-area: areaD; }
+.template-item:nth-child(5) { grid-area: areaE; }
+
+/* Адаптивный дизайн с Grid */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .alignment-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 100px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
